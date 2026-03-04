@@ -1,0 +1,13 @@
+pandas
+numpy
+sqlalchemy
+psycopg2-binary
+scikit-learn
+xgboost
+shap
+matplotlib
+seaborn
+streamlit
+python-dotenv
+dbt-core
+dbt-postgres

@@ -1,0 +1,12 @@
+UCI_Student_Info:
+  target: dev
+  outputs:
+    dev:
+      type: postgres
+      host: localhost
+      user: postgres
+      password: yourpassword
+      port: 5432
+      database: UCI_Student_Info
+      schema: public
+      threads: 1

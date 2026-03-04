@@ -1,0 +1,44 @@
+version: 2
+
+sources:
+  - name: UCI_Student_Info
+    schema: public
+    tables:
+      - name: raw_students
+        columns:
+          - name: g3
+            tests:
+              - not_null
+          - name: age
+            tests:
+              - not_null
+          - name: failures
+            tests:
+              - not_null
+
+models:
+  - name: stg_students
+    columns:
+      - name: student_id
+        tests:
+          - not_null
+          - unique
+      - name: at_risk
+        tests:
+          - not_null
+          - accepted_values:
+              arguments:
+                values: [0, 1]
+
+  - name: mart_student_risk
+    columns:
+      - name: student_id
+        tests:
+          - not_null
+          - unique
+      - name: at_risk
+        tests:
+          - not_null
+          - accepted_values:
+              arguments:
+                values: [0, 1]
